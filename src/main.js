@@ -74,7 +74,6 @@ function makeMsg(m){
   d.style.opacity='0'; d.style.transform='translateY(8px)'; d.style.transition='opacity .3s,transform .3s';
   const now=new Date();
   const t=`${now.getHours()}:${String(now.getMinutes()).padStart(2,'0')}`;
-  // double-tick SVG (blue for read, grey for sent)
   const col=isUser?'#53bdeb':'#8696a0';
   const tickSVG=`<svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M1 5L4 8L8 2" stroke="${col}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 8L10 2" stroke="${col}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 

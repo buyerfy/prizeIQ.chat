@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BuyChat načela privatnosti — PrizeIQ.chat</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root{--bg:#08080f;--bg2:#0d0a1f;--border:rgba(255,255,255,.07);--text:rgba(240,240,248,.9);--text-muted:rgba(240,240,248,.55);--text-dim:rgba(240,240,248,.35);--green:#25D366;--purple:#7360F2;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7}
+  nav{position:sticky;top:0;z-index:100;background:rgba(8,8,15,.9);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);padding:16px 0}
+  .nav-inner{max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.1rem;color:var(--text);text-decoration:none}
+  .nav-logo span{color:var(--green)}
+  .nav-back{color:var(--text-muted);text-decoration:none;font-size:.85rem;transition:color .2s}
+  .nav-back:hover{color:var(--green)}
+  .container{max-width:960px;margin:0 auto;padding:0 24px}
+
+  /* HERO */
+  .hero{padding:64px 0 48px}
+  .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(115,96,242,.12);border:1px solid rgba(115,96,242,.25);border-radius:100px;padding:6px 14px;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#a89bff;margin-bottom:20px}
+  .hero h1{font-family:'Montserrat',sans-serif;font-size:2.4rem;font-weight:900;line-height:1.15;margin-bottom:16px}
+  .hero h1 span{color:var(--green)}
+  .hero p{color:var(--text-muted);font-size:.95rem;line-height:1.7;max-width:460px}
+  .hero-img{border-radius:20px;overflow:hidden;border:1px solid var(--border);background:linear-gradient(135deg,rgba(115,96,242,.15),rgba(37,211,102,.1));display:flex;align-items:center;justify-content:center;min-height:280px}
+  .hero-img svg{opacity:.6}
+
+  /* TOP 3 CARDS */
+  .top-cards{padding:0 0 56px}
+  .top-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .top-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:28px 24px;transition:border-color .25s}
+  .top-card:hover{border-color:rgba(37,211,102,.3)}
+  .top-card-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px}
+  .top-card-icon.green{background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2)}
+  .top-card-icon.purple{background:rgba(115,96,242,.1);border:1px solid rgba(115,96,242,.2)}
+  .top-card-icon.blue{background:rgba(56,139,253,.1);border:1px solid rgba(56,139,253,.2)}
+  .top-card p{color:var(--text-muted);font-size:.9rem;line-height:1.6;font-weight:500}
+
+  /* DIVIDER */
+  .section-divider{border:none;border-top:1px solid var(--border);margin:0 0 56px}
+
+  /* PRINCIPLES GRID */
+  .principles-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:64px}
+  .principle{display:flex;gap:16px;padding:24px 20px;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+  .principle:nth-child(even){border-right:none}
+  .principle:nth-last-child(-n+2){border-bottom:none}
+  .principle-dot{flex-shrink:0;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-top:2px}
+  .principle-dot.g{background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2)}
+  .principle-dot.p{background:rgba(115,96,242,.1);border:1px solid rgba(115,96,242,.2)}
+  .principle-title{font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:800;color:var(--text);margin-bottom:6px}
+  .principle-desc{font-size:.85rem;color:var(--text-muted);line-height:1.6}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:32px 0;margin-top:0}
+  .footer-inner{max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .footer-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:.95rem;color:var(--text);text-decoration:none}
+  .footer-logo span{color:var(--green)}
+  .footer-links{display:flex;gap:20px;list-style:none}
+  .footer-links a{color:var(--text-dim);font-size:.8rem;text-decoration:none;transition:color .2s}
+  .footer-links a:hover{color:var(--green)}
+
+  @media(max-width:700px){
+    .hero-inner{grid-template-columns:1fr}
+    .hero-img{display:none}
+    .top-cards-grid{grid-template-columns:1fr}
+    .principles-grid{grid-template-columns:1fr}
+    .principle{border-right:none}
+    .principle:nth-last-child(-n+2){border-bottom:1px solid var(--border)}
+    .principle:last-child{border-bottom:none}
+    .hero h1{font-size:1.8rem}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">PrizeIQ<span>.</span>chat</a>
+    <a class="nav-back" href="/">← Natrag na početnu</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="badge">Načela privatnosti</div>
+        <h1>BuyChat načela<br><span>privatnosti</span></h1>
+        <p>Osam načela čine temelj naše predanosti odgovornom prikupljanju, korištenju i dijeljenju osobnih podataka kupaca i zaposlenika.</p>
+      </div>
+      <div class="hero-img">
+        <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="90" cy="90" r="60" stroke="rgba(37,211,102,.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <circle cx="90" cy="90" r="40" stroke="rgba(115,96,242,.3)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <circle cx="90" cy="90" r="20" fill="rgba(37,211,102,.12)" stroke="rgba(37,211,102,.4)" stroke-width="1.5"/>
+          <text x="90" y="96" text-anchor="middle" font-size="18" fill="rgba(37,211,102,.8)">🛡️</text>
+          <circle cx="90" cy="30" r="7" fill="rgba(37,211,102,.2)" stroke="rgba(37,211,102,.5)" stroke-width="1"/>
+          <circle cx="145" cy="65" r="5" fill="rgba(115,96,242,.2)" stroke="rgba(115,96,242,.5)" stroke-width="1"/>
+          <circle cx="145" cy="115" r="7" fill="rgba(37,211,102,.2)" stroke="rgba(37,211,102,.5)" stroke-width="1"/>
+          <circle cx="90" cy="150" r="5" fill="rgba(115,96,242,.2)" stroke="rgba(115,96,242,.5)" stroke-width="1"/>
+          <circle cx="35" cy="115" r="7" fill="rgba(37,211,102,.2)" stroke="rgba(37,211,102,.5)" stroke-width="1"/>
+          <circle cx="35" cy="65" r="5" fill="rgba(115,96,242,.2)" stroke="rgba(115,96,242,.5)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP 3 CARDS -->
+<section class="top-cards">
+  <div class="container">
+    <div class="top-cards-grid">
+      <div class="top-card">
+        <div class="top-card-icon green">📋</div>
+        <p>Od vas ćemo tražiti samo informacije koje su nam potrebne.</p>
+      </div>
+      <div class="top-card">
+        <div class="top-card-icon purple">🔔</div>
+        <p>Uvijek ćemo vas obavijestiti kako se vaši podaci koriste.</p>
+      </div>
+      <div class="top-card">
+        <div class="top-card-icon blue">🔐</div>
+        <p>Imate pristup svim podacima koje prikupljamo i sigurno pohranjujemo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" style="max-width:960px;margin:0 auto 56px;padding:0 24px">
+
+<!-- 8 PRINCIPLES -->
+<div class="container">
+  <div class="principles-grid">
+
+    <div class="principle">
+      <div class="principle-dot g">⚙️</div>
+      <div>
+        <div class="principle-title">Upravljanje</div>
+        <p class="principle-desc">Uspostavili smo uloge i odgovornosti za prikupljanje, obradu, pohranjivanje i dijeljenje osobnih podataka.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-dot p">👁️</div>
+      <div>
+        <div class="principle-title">Obavijest i transparentnost</div>
+        <p class="principle-desc">Transparentni smo u pogledu načina na koji prikupljamo, obrađujemo i dijelimo osobne podatke.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-dot g">✅</div>
+      <div>
+        <div class="principle-title">Izbor i pristanak</div>
+        <p class="principle-desc">Pružamo smislene izbore klijentima i zaposlenicima o tome kako tvrtka koristi ili dijeli osobne podatke.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-dot p">📦</div>
+      <div>
+        <div class="principle-title">Kolekcija</div>
+        <p class="principle-desc">Ograničavamo prikupljanje osobnih podataka na ono što je potrebno za obradu transakcija korisnika i pružanje naših usluga.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-dot g">🗂️</div>
+      <div>
+        <div class="principle-title">Korištenje, zadržavanje i odlaganje</div>
+        <p class="principle-desc">Osobne podatke koristimo i čuvamo u svrhe koje su usklađene s onim što kažemo našim klijentima i zaposlenicima te njima raspolažemo na siguran način.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-dot p">🔗</div>
+      <div>
+        <div class="principle-title">Dijeljenje i prijenos</div>
+        <p class="principle-desc">Osobne podatke dijelimo samo kada je to zakonski dopušteno s trećim stranama koje ispunjavaju naše standarde zaštite podataka.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-dot g">📊</div>
+      <div>
+        <div class="principle-title">Pristup i kvaliteta</div>
+        <p class="principle-desc">Održavamo točne i relevantne osobne podatke te korisnicima i zaposlenicima omogućujemo pristup osobnim podacima.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-dot p">🛡️</div>
+      <div>
+        <div class="principle-title">Sigurnost</div>
+        <p class="principle-desc">Štitimo osobne podatke i, u slučaju povrede, ispravno i promptno obavještavamo pogođene klijente i zaposlenike kada je to potrebno.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="/">PrizeIQ<span>.</span>chat</a>
+    <ul class="footer-links">
+      <li><a href="privatnost.html" style="color:var(--green)">Privatnost</a></li>
+      <li><a href="terms-of-use-of-the-survey-and-privacy.html">Uvijeti korištenja</a></li>
+      <li><a href="/">Početna</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

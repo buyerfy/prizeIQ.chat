@@ -1,2 +1,2 @@
-# odoo
-odoo web
+# prizeIQ
+web

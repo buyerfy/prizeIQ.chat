@@ -8,7 +8,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         privatnost: resolve(__dirname, 'privatnost.html'),
-        terms: resolve(__dirname, 'terms-of-use-of-the-survey-and-privacy.html')
+        terms: resolve(__dirname, 'terms-of-use-of-the-survey-and-privacy.html'),
+        principles: resolve(__dirname, 'principles.html')
       }
     }
   }

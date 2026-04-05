@@ -1,1 +1,18 @@
-aW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSAndml0ZScKaW1wb3J0IHsgcmVzb2x2ZSB9IGZyb20gJ3BhdGgnCgpleHBvcnQgZGVmYXVsdCBkZWZpbmVDb25maWcoewogIGJ1aWxkOiB7CiAgICBvdXREaXI6ICdkaXN0JywKICAgIHJvbGx1cE9wdGlvbnM6IHsKICAgICAgaW5wdXQ6IHsKICAgICAgICBtYWluOiByZXNvbHZlKF9fZGlybmFtZSwgJ2luZGV4Lmh0bWwnKSwKICAgICAgICBwcml2YXRub3N0OiByZXNvbHZlKF9fZGlybmFtZSwgJ3ByaXZhdG5vc3QuaHRtbCcpLAogICAgICAgIHRlcm1zOiByZXNvbHZlKF9fZGlybmFtZSwgJ3Rlcm1zLW9mLXVzZS1vZi10aGUtc3VydmV5LWFuZC1wcml2YWN5Lmh0bWwnKSwKICAgICAgICBwcmluY2lwbGVzOiByZXNvbHZlKF9fZGlybmFtZSwgJ3ByaW5jaXBsZXMuaHRtbCcpLAogICAgICAgIHByaXZhY3lmdWxsOiByZXNvbHZlKF9fZGlybmFtZSwgJ3ByaXZhY3ktZnVsbC5odG1sJyksCiAgICAgICAgdGVybXNjb25kaXRpb25zOiByZXNvbHZlKF9fZGlybmFtZSwgJ3Rlcm1zLWNvbmRpdGlvbnMuaHRtbCcpCiAgICAgIH0KICAgIH0KICB9Cn0pCg==
+import { defineConfig } from 'vite'
+import { resolve } from 'path'
+
+export default defineConfig({
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        privatnost: resolve(__dirname, 'privatnost.html'),
+        terms: resolve(__dirname, 'terms-of-use-of-the-survey-and-privacy.html'),
+        principles: resolve(__dirname, 'principles.html'),
+        privacyfull: resolve(__dirname, 'privacy-full.html'),
+        termsconditions: resolve(__dirname, 'terms-conditions.html')
+      }
+    }
+  }
+})
